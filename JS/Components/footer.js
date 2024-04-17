@@ -1,0 +1,2 @@
+let footer = document.querySelector('.footer');
+footer.innerHTML = `<p class="dev-name">Designed and Developed By <a href="https://ask-ahmad.web.app">AhDev</a> .</p> <div class = "socil-icons" ><a href="https://t.me/AhmadSheikhKhamis"><i class="bi bi-telegram"></i></a> <a href = ""> <i class="bi bi-linkedin"></i> </a><a href = ""><i class="bi bi-facebook"></i></a><a href = ""> <i class="bi bi-github"></i> </a> <a href = ""> <i class="bi bi-envelope-at-fill"></i> </a> </div>`

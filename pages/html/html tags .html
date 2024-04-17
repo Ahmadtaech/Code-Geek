@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="../../JS/color-modes.js"></script>
+  <link href="../../CSS/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../CSS/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+    * {
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    body {
+      background: transparent
+    }
+
+    .htmlTagsTable {
+      margin: auto;
+      border: 1px solid #06c;
+      border-radius: 10px
+    }
+
+    td {
+      border: 1px solid #06c;
+      border-radius: 3px;
+      margin: auto;
+      color: gray;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+  <div style="display: none;" class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)" style="background: #0066cc">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class=" bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <table class="htmlTagsTable" id="htmlTagsTable">
+    <tr>
+      <td style="text-align: center; color: teal;background: #00808033">Tag</td>
+      <td style="text-align: center;color: teal;background: #00808033">Usage</td>
+    </tr>
+  </table>
+  <script>
+    let htmlTagsTable = document.getElementById('htmlTagsTable');
+    let tags = ['!-- --', '!DOCTYP html', 'a', 'abbr', 'acronym', 'article', 'aside', 'audio', 'b', 'base', 'basefont', 'bdo', 'big', 'body', 'br', 'button', 'canvas', 'caption', 'center', 'code', 'col', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl' , 'dt' , 'em' , 'embed' , 'fieldset' , 'figcaption' , 'figure' , 'font' , 'footer' , 'form' , 'frame' , 'h1&gt; to &lt;h6' , 'head' , 'header' , 'hr' , 'html' , 'i' , 'iframe' ,
+    'img' , 'input' , 'ins' , 'isindex' , 'kbd' , 'label' , 'legend' , 'li' , 'link' , 'main' , 'map' , 'mark' , 'marquee' , 'meta' , 'meter' , 'nav' , 'noframes' , 'object' , 'ol' , 'optgroup' , 'option' , 'output' , 'p' , 'param' , 'picture' , 'pre' , 'progress' , 'q' , 'rp' , 'rt' , 'ruby' , 's' , 'samp' , 'script' , 'section' , 'select' , 'small' , 'source' , 'span' , 'strike' , 'strong' , 'style' , 'sub' , 'summary' , 'sup' , 'svg' , 'table' , 'tbody' , 'td' ,
+    'template' , 'textarea' , 'tfoot' , 'thead' , 'time' , 'title' , 'tr' , 'track' , 'tt' , 'ul' , 'var' , 'video' , 'wbr'
+    ]
+    let usage = ['This tag is used to apply comment in an HTML document.',
+    'This tag is used to specify the version of HTML',
+    'It is termed as anchor tag and it creates a hyperlink or link.',
+    'It defines an abbreviation for a phrase or longer word.',
+    'It defines acronym for a word',
+    'It defines the self-contained content',
+    'It defines content aside from main content. Mainly represented as sidebar',
+    'It is used to embed sound content in HTML document.',
+    'It is used to make a text bold',
+    'This tag defines the base URL for all relative URL within the document',
+    'This tag is used to set default font, size and color for all elements of document',
+    'It is used to override the current text direction',
+    'This tag is used to make font size one level larger than its surrounding content',
+    'It is used to define the body section of an HTML document',
+    'It is used to apply single line break',
+    'It is used to represent a clickable button',
+    'It is used to provide a graphics space within a web document',
+    'It is used to define a caption for a table',
+    'It is used to align the content in center',
+    'It is used to display a part of programming code in an HTML document',
+    'It defines a column within a table which represent common properties of columns and used with the &lt;colgroup&gt; element',
+    'It is used to define group of columns in a table',
+    'It is used to link the content with the machine-readable translation',
+    'It is used to provide a predefined list for input option',
+    'It is used to provide definition/description of a term in description list',
+    'It defines a text which has been deleted from the document',
+    'It defines additional details which user can either view or hide',
+    'It is used to indicate a term which is defined within a sentence/phrase',
+    'It defines a dialog box or other interactive components',
+    'It defines a division or section within HTML document',
+    'It is sued to define a description list' ,
+    'It is used to define a term in description list' ,
+    'It is used to emphasis the content applied within this element' ,
+    'It is used as embedded container for external file/application/media, etc' ,
+    'It is used to group related elements/labels within a web form' , 
+    'It is used to add a caption or explanation for the &lt;figure&gt; element' ,
+    'It is used to define the self-contained content, and smostly refer as single unit' ,
+    'It defines the font, size, color, and face for the content' ,
+    'It defines the footer section of a webpage' ,
+    'It is used to define an HTML form' ,
+    'It defines a particular area of webpage which can contain another HTML file' , 
+    'It defines headings for an HTML document from level 1 to level 6' ,
+    'It defines the head section of an HTML document' ,
+    'It defines the header of a section or webpage' ,
+    'It is used to apply thematic break between paragraph-level elements' ,
+    'It represents root of an HTML document' , 
+    'It is used to represent a text in some different voice' ,
+    'It defines an inline frame which can embed other content' , 
+    'It is used to insert an image within an HTML document' , 
+    'It defines an input field within an HTML form' ,
+    'It represent text that has been inserted within an HTML document' ,
+    'It is used to display search string for current document' , 
+    'It is used to define keyboard input' , 
+    'It defines a text label for the input field of form' ,
+    'It defines a caption for content of &lt;fieldset&gt;' ,
+    'It is used to represent items in list' , 
+    'It represents a relationship between current document and an external resource' , 
+    'It represents the main content of an HTML document' ,
+    'It defines an image map with active areas' , 
+    'It represents a highlighted text' , 
+    'It is used to insert the scrolling text or an image either horizontally or vertically' ,
+    'It defines metadata of an HTML document' , 
+    'It defines scalar measurement with known range or fractional value' ,
+    'It represents section of page to represent navigation links' ,
+    'It provides alternate content to represent in browser which does not support the &lt;frame&gt; elements' , 
+    'It is used to embed an object in HTML file' ,
+    'It defines an ordered list of items' ,
+    'It is used to group the options of a drop-down list' , 
+    'It is used to define options or items in a drop-down list' , 
+    'It is used as container element which can show result of a calculation' , 
+    'It represents a paragraph in an HTML document' ,
+    'It defines parameter for an &lt;object&gt; element' , 
+    'It defines more than one source element and one image element' ,
+    'It defines preformatted text in an HTML document' ,
+    'It defines the progress of a task within HTML document' , 
+    'It defines short inline quotation' , 
+    'It defines an alternative content if browser does not supports ruby annotations' , 
+    'It defines explanations and pronunciations in ruby annotations' ,
+    'It is used to represent ruby annotations' , 
+    'It render text which is no longer correct or relevant' , 
+    'It is used to represent sample output of a computer program' ,
+    'It is used to declare the JavaScript within HTML document' ,
+    'It defines a generic section for a document' ,
+    'It represents a control which provides a menu of options' ,
+    "It is used to make text font one size smaller than document's base font size" , 
+    'It defines multiple media recourses for different media element such as &lt;picture&gt;, &lt;video&gt;, and &lt;audio&gt; element' ,
+    'It is used for styling and grouping inline' ,
+    'It is used to render strike through the text' ,
+    'It is used to define important text' ,
+    'It is used to contain style information for an HTML document' ,
+    'It defines a text which displays as a subscript text' ,
+    'It defines summary which can be used with &lt;details&gt; tag' ,
+    'It defines a text which represent as superscript text' ,
+    'It is used as container of SVG (Scalable Vector Graphics)' ,
+    'It is used to present data in tabular form or to create a table within HTML document' , 
+    'It represents the body content of an HTML table and used along with &lt;thead&gt; and &lt;tfoot&gt;' ,
+    'It is used to define cells of an HTML table which contains table data' ,
+    'It is used to contain the client side content which will not display at time of page load and may render later using JavaScript' ,
+    'It is used to define multiple line input, such as comment, feedback, and review, etc' ,
+    'It defines the footer content of an HTML table. &lt;th&gt;It defines the head cell of an HTML table' , 
+    'It defines the header of an HTML table. It is used along with &tbody> and < tfoot> tags' , 
+    'It is used to define data/time within an HTML document' ,
+    'It defines the title or name of an HTML document' , 
+    'It defines the row cells in an HTML table' ,
+    'It is used to define text tracks for &lt;audio&gt; and &lt;video&gt; elements' , 
+    'It is used to define teletype text' ,
+    'It defines unordered list of items' ,
+    'It defines variable name used in mathematical or programming context' ,
+    'It is used to embed a video content with an HTML document' , 
+    'It defines a position within text where break line is possible' , 
+    
+    ]
+    for (var i = 0; i < tags.length; i++) {
+      htmlTagsTable.innerHTML += `
+             <tr>
+               <td style="text-align: center">&lt;${tags[i]}&gt;</td>
+               <td>${usage[i]}</td>
+             </tr>
+           `
+    }
+  </script>
+</body>
+
+</html>
